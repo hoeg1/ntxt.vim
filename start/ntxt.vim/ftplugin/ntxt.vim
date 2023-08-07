@@ -3,7 +3,7 @@
 " 原稿用紙換算で何枚になるか
 function! s:Genko400()
   " コメントやサブタイメモを消す
-  let l:buf_ch = join( map ( getline(0, '$'), "substitute(v:val, '[#＃※].*$', ',')" ), '')
+  let l:buf_ch = join( map ( getline(0, '$'), "substitute(v:val, '[#＃※].*$', '','')" ), '')
   " ルビはカウントしない
   let l:buf_ch = substitute(l:buf_ch, '[|｜]\|《[^《》]*》', '', 'g')
   " そんな文字数＝＞全角含む全ての文字を x にして文字数カウント
