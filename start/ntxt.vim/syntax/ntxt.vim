@@ -5,7 +5,7 @@ endif
 syn region nSharp start=/[#＃]/ end=/$/
 highlight def link nSharp Title
 
-syn region nComment start=/※/ end=/$/
+syn region nComment start=/^[ 　]*※/ end=/$/
 highlight def link nComment Comment
 
 " ルビと傍点には｜を必須とする
