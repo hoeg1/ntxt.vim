@@ -10,9 +10,7 @@ highlight def link nComment Comment
 
 " ルビと傍点には｜を必須とする
 " 汎用性を考え、カクヨム形式の《《傍点対象》》は使わない
-syn region nRubySE matchgroup=nRuby start=/[|｜]/ end=/《[^《》|｜]\+》/ contains=nRubyVal
-hi def link nRuby NonText
-hi def link nRubyVal String
+syn region String matchgroup=NonText start=/[|｜]/ end=/《[^《》|｜]\+》/ contains=Comment
 
 " 半角スペースを警告
 syn match hanSp /\s\+/
