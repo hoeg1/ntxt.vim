@@ -52,7 +52,7 @@ function! s:SetRuby(arg) abort
 endfunction
 
 " <C-j>にマップする
-vnoremap <buffer><silent> <C-j> ygvc<C-r>=<SID>SetRuby(@0)<CR>
+vnoremap <buffer><silent> <C-j> "aygv"_c<C-r>=<SID>SetRuby(@a)<CR>
 inoremap <buffer><silent> <C-j> <C-r>=<SID>SetRuby('')<CR>
 
 
