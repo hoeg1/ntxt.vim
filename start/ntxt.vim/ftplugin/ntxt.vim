@@ -20,7 +20,7 @@ endfunction
 " コマンド名は Kansan とでもしておく
 command! -buffer Kansan :call s:Genko400()
 
-" 傍点。argは呼び出し元のモード
+" ルビや傍点をつける。argは呼び出し元のモード
 function! s:SetRuby(arg) abort
   if strlen(a:arg)
     " 選択範囲について
@@ -45,6 +45,7 @@ function! s:SetRuby(arg) abort
   endif
   " 入力がキャンセルされなければ
   if l:out[1] =~ '^・'
+    " 指定されたルビがナカグロなら、ターゲットに傍点をつける
     return substitute(l:out[0], '.', '｜\0《・》', 'g')
   else
     return '｜' .. l:out[0] .. '《' .. l:out[1] .. '》'

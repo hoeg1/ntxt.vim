@@ -2,10 +2,12 @@ if exists("b:current_syntax")
   finish
 endif
 
-syn region nSharp start=/[#＃]/ end=/$/
+" タイトルの指定：　行頭が＃で、改行まで
+syn region nSharp start=/^[#＃]/ end=/$/
 highlight def link nSharp Title
 
-syn region nComment start=/^[ 　]*※/ end=/$/
+" コメント文：　行頭が※で始まって改行までとする
+syn region nComment start=/^※/ end=/$/
 highlight def link nComment Comment
 
 " ルビと傍点には｜を必須とする
